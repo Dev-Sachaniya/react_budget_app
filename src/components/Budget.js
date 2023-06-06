@@ -14,7 +14,7 @@ const Budget = ({ currency }) => {
 
   const handleSave = () => {
     if (updatedBudget > 20000) {
-      alert("Budget value cannot exceed 20,000");
+      alert(`Budget value cannot exceed 20000`);
       return;
     }
 

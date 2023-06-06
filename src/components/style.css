@@ -14,3 +14,21 @@
     background-color: white;
     cursor: default;
 }
+
+.incrs-btn{
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(24, 136, 24);
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+}
+.decrs-btn{
+    border: none;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    width: 25px;
+}

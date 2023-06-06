@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState } from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -11,25 +11,33 @@ import ExpenseTotal from './components/ExpenseTotal';
 import ExpenseList from './components/ExpenseList';
 import ExpenseItem from './components/ExpenseItem';
 import AllocationForm from './components/AllocationForm';
-
+import CurrencyDropdown from './components/CurrencyDropdown'
 
 import { AppProvider } from './context/AppContext';
 const App = () => {
+    const [currency, setCurrency] = useState('£');
+
+    const handleCurrencyChange = (selectedCurrency) => {
+        setCurrency(selectedCurrency);
+    };
     return (
         <AppProvider>
             <div className='container'>
                 <h1 className='mt-3'>Company's Budget Allocation</h1>
                 <div className='row mt-3'>
                     <div className='col-sm'>
-                        <Budget />
+                        <Budget currency={currency}/>
                     </div>        
 
                     <div className='col-sm'>
-                        <Remaining />
+                        <Remaining currency={currency}/>
                     </div>        
 
                     <div className='col-sm'>
-                        <ExpenseTotal />
+                        <ExpenseTotal currency={currency}/>
+                    </div>        
+                    <div className='col-sm'>
+                        <CurrencyDropdown selectedCurrency={currency} onCurrencyChange={handleCurrencyChange}/>
                     </div>        
                 </div>
                 <h3 className='mt-3'>Allocation</h3>
@@ -45,7 +53,7 @@ const App = () => {
                     <h3 className='mt-3'>Change allocation</h3>
                 <div className='row mt-3'>
                     <div className='col-sm'>
-                        <AllocationForm/>
+                        <AllocationForm currency={currency}/>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,16 @@
+.currency-down{
+    background-color: rgb(131, 241, 179);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    width: 170px;
+}
+
+.currency-menu{
+    background: rgb(131, 241, 179);
+}
+
+.currency-menu:hover{
+    background-color: white;
+    cursor: default;
+}
